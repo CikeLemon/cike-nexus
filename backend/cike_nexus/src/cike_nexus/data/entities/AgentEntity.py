@@ -21,7 +21,7 @@ ModelConfig = Annotated[
 ]
 
 
-class AgentApplication(FullAuditedEntity, table=True):
+class AgentEntity(FullAuditedEntity, table=True):
     display_name: str = Field(default="", description="显示名称", index=True, nullable=False, max_length=256)
     name: str = Field(default="", description="名称", index=True, nullable=False, max_length=256)
     description: str = Field(default="", description="描述", index=True, nullable=False, max_length=512)

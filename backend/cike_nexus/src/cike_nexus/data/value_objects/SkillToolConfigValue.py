@@ -1,9 +1,12 @@
+from typing import Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from cike_nexus.data.enums.ToolType import ToolType
 
 
 class SkillToolConfigValue(BaseModel):
-    type:ToolType
-    url: str
+    type: Literal[ToolType.SKILL] = Field(
+        default=ToolType.SKILL, description="类型标识，固定为 SKILL"
+    )
+    url: str = Field(description="Skill 资源地址")
